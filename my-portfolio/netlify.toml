@@ -1,0 +1,38 @@
+# Netlify Configuration for Methmal Janeesha Portfolio
+
+[build]
+  # Static site - no build command required
+  publish = "."
+  functions = "netlify/functions"
+
+# Production Headers & Security Best Practices
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Asset Caching for Fast Performance
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Audio File Streaming Headers
+[[headers]]
+  for = "/assets/audio/*"
+  [headers.values]
+    Content-Type = "audio/mpeg"
+    Accept-Ranges = "bytes"
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+# Downloadable Document Headers (CV / Resume)
+[[headers]]
+  for = "/assets/files/*"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Content-Disposition = "attachment; filename=\"Methmal_Janeesha_CV.pdf\""
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

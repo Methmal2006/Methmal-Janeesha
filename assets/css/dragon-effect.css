@@ -1,0 +1,240 @@
+﻿/* =============================================================================
+   HERO DRAGON INTERACTIVE BACKGROUND STYLES
+   Matches Methmal Janeesha Dark Obsidian & Glowing Purple Aesthetic
+   ============================================================================= */
+
+/* Contain dragon strictly within hero section */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dragon Background Container */
+.hero-dragon-wrap {
+  position: absolute;
+  top: 50%;
+  right: -6%;
+  transform: translateY(-50%);
+  width: min(1080px, 72vw);
+  max-width: 1200px;
+  pointer-events: none;
+  z-index: 0;
+  perspective: 1000px;
+  user-select: none;
+  overflow: visible;
+}
+
+/* Layered Ambient Aura behind Dragon */
+.dragon-ambient-glow {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(
+    circle,
+    rgba(147, 51, 234, 0.22) 0%,
+    rgba(99, 102, 241, 0.12) 35%,
+    rgba(16, 185, 129, 0.06) 55%,
+    transparent 75%
+  );
+  filter: blur(65px);
+  pointer-events: none;
+  z-index: 0;
+  animation: dragonAuraPulse 9s ease-in-out infinite alternate;
+}
+
+@keyframes dragonAuraPulse {
+  0% {
+    opacity: 0.65;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+/* Interactive Dragon Entity (transforms via GSAP) */
+.dragon-entity {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Mobile & Touch Gentle Floating Fallback */
+.dragon-entity.mobile-float {
+  animation: dragonGentleFloat 7s ease-in-out infinite alternate;
+}
+
+@keyframes dragonGentleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(0.6deg);
+  }
+  100% {
+    transform: translate3d(0, 8px, 0) rotate(-0.5deg);
+  }
+}
+
+/* Dragon Image */
+.dragon-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.16;
+  filter: drop-shadow(0 0 35px rgba(139, 92, 246, 0.45));
+  transition: opacity 0.6s ease, filter 0.6s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-dragon-wrap.active .dragon-image {
+  opacity: 0.19;
+  filter: drop-shadow(0 0 45px rgba(168, 85, 247, 0.55));
+}
+
+/* Dragon Eye Glow (Emerald / Neon Green Accent) */
+.dragon-eye-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform, opacity;
+  background: radial-gradient(
+    ellipse at center,
+    #bbf7d0 0%,
+    #22c55e 35%,
+    rgba(34, 197, 94, 0.5) 60%,
+    transparent 100%
+  );
+  box-shadow: 
+    0 0 8px #22c55e,
+    0 0 18px rgba(34, 197, 94, 0.75),
+    0 0 30px rgba(16, 185, 129, 0.45);
+  mix-blend-mode: screen;
+}
+
+/* Primary Eye (Dragon's Left Eye) */
+.dragon-eye-glow.eye-main {
+  left: 52.63%;
+  top: 30.29%;
+  width: 14px;
+  height: 8px;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  opacity: 0.85;
+  animation: eyePulseMain 3.8s ease-in-out infinite alternate;
+}
+
+/* Secondary Eye Glint (Snout Angle) */
+.dragon-eye-glow.eye-secondary {
+  left: 44.86%;
+  top: 35.60%;
+  width: 8px;
+  height: 5px;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  opacity: 0.65;
+  animation: eyePulseSec 3.8s ease-in-out infinite alternate;
+}
+
+@keyframes eyePulseMain {
+  0% {
+    opacity: 0.65;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(0.9);
+    filter: drop-shadow(0 0 6px #22c55e);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(1.2);
+    filter: drop-shadow(0 0 12px #22c55e) drop-shadow(0 0 20px #10b981);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(0.95);
+    filter: drop-shadow(0 0 8px #22c55e);
+  }
+}
+
+@keyframes eyePulseSec {
+  0% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) rotate(-10deg) scale(1.15);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.95);
+  }
+}
+
+/* Subtle Vignette Gradient Mask to Blend Edge Softly */
+.dragon-entity::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 60% 45%,
+    transparent 50%,
+    rgba(7, 7, 10, 0.4) 80%,
+    rgba(7, 7, 10, 0.9) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Responsive Scaling & Media Queries */
+@media (max-width: 1200px) {
+  .hero-dragon-wrap {
+    width: min(960px, 75vw);
+    right: -10%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-dragon-wrap {
+    width: min(850px, 92vw);
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  .dragon-image {
+    opacity: 0.14;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-dragon-wrap {
+    width: 130vw;
+    max-width: 600px;
+    right: 50%;
+    top: 45%;
+    transform: translate(50%, -50%);
+  }
+
+  .dragon-image {
+    opacity: 0.13;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .dragon-ambient-glow,
+  .dragon-entity.mobile-float,
+  .dragon-eye-glow {
+    animation: none !important;
+  }
+
+  .dragon-entity {
+    transform: none !important;
+  }
+}
