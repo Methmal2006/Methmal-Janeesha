@@ -1,4 +1,4 @@
-﻿/**
+/**
  * =========================================================================
  * MAIN APPLICATION LOGIC & GSAP ANIMATIONS
  * =========================================================================
@@ -1296,35 +1296,16 @@ function initManifestCarousel() {
 
 
 /**
- * Download CV with Confirmation Dialog
- * Shows browser confirmation modal and triggers download if accepted
+ * Download CV Button Handler
+ * Ensures proper download attributes on the anchor element for direct download
  */
 function initDownloadCV() {
   const cvBtn = document.getElementById('download-cv-btn') || document.querySelector('.about-cta-row a');
   if (!cvBtn) return;
 
-  cvBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const confirmed = window.confirm("Do you want to download Methmal Janeesha's CV?");
-    if (!confirmed) {
-      return;
-    }
-
-    const downloadUrl = 'assets/files/Methmal_Janeesha_CV.pdf';
-    const downloadName = 'Methmal_Janeesha_CV.pdf';
-
-    const tempLink = document.createElement('a');
-    tempLink.href = downloadUrl;
-    tempLink.download = downloadName;
-    tempLink.style.display = 'none';
-    document.body.appendChild(tempLink);
-    tempLink.click();
-    document.body.removeChild(tempLink);
-  });
+  cvBtn.setAttribute('href', 'assets/files/Methmal_Janeesha_CV.pdf');
+  cvBtn.setAttribute('download', 'Methmal_Janeesha_CV.pdf');
 }
-
-
 /**
  * Functional Services Category Filter
  */
