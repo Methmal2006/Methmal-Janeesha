@@ -103,7 +103,7 @@ try {
             }
         }
 
-        $localPath = $request.Url.LocalPath.TrimStart('/')
+        $localPath = [System.Uri]::UnescapeDataString($request.Url.LocalPath.TrimStart('/'))
         if ([string]::IsNullOrEmpty($localPath)) {
             $localPath = "index.html"
         }
@@ -130,6 +130,9 @@ try {
             $bytes = [System.IO.File]::ReadAllBytes($filePath)
             $response.ContentType = $contentType
             $response.ContentLength64 = $bytes.Length
+            if ($ext -eq ".pdf") {
+                $response.Headers.Add("Content-Disposition", 'attachment; filename="Methmal_Janeesha_CV.pdf"')
+            }
             $response.StatusCode = 200
             $response.OutputStream.Write($bytes, 0, $bytes.Length)
         } else {

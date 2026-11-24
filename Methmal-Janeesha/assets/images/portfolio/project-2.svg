@@ -1,0 +1,49 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p2Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#141126"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#p2Bg)"/>
+  
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" rx="16" fill="#111625"/>
+  <rect x="0" y="26" width="800" height="16" fill="#111625"/>
+  <circle cx="28" cy="21" r="5.5" fill="#ef4444"/><circle cx="48" cy="21" r="5.5" fill="#eab308"/><circle cx="68" cy="21" r="5.5" fill="#22c55e"/>
+  <rect x="250" y="11" width="300" height="20" rx="10" fill="#1e2438"/>
+  <text x="355" y="25" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">vaultx.defi.network</text>
+
+  <!-- Virtual Card / Web3 Asset -->
+  <rect x="50" y="80" width="360" height="210" rx="20" fill="url(#cardGrad)"/>
+  <circle cx="90" cy="120" r="18" fill="white" fill-opacity="0.2"/>
+  <text x="90" y="126" fill="white" font-family="Inter, sans-serif" font-weight="700" font-size="16">VX</text>
+  <text x="50" y="220" transform="translate(40, 0)" fill="#ffffff" font-family="Inter, sans-serif" font-weight="600" font-size="18" letter-spacing="3">â€¢â€¢â€¢â€¢  â€¢â€¢â€¢â€¢  â€¢â€¢â€¢â€¢  8921</text>
+  <text x="90" y="260" fill="#e9d5ff" font-family="Inter, sans-serif" font-size="12">PORTFOLIO BALANCE: $142,500.00</text>
+
+  <!-- Token Swap & Activity -->
+  <rect x="440" y="80" width="310" height="380" rx="16" fill="#131826" stroke="#252f48" stroke-width="1"/>
+  <text x="470" y="120" fill="#ffffff" font-family="Inter, sans-serif" font-weight="700" font-size="16">Instant Liquidity Swap</text>
+  
+  <rect x="470" y="145" width="250" height="60" rx="10" fill="#1b2236"/>
+  <text x="490" y="175" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Pay: ETH</text>
+  <text x="490" y="195" fill="#ffffff" font-family="Inter, sans-serif" font-weight="600" font-size="14">4.500 ($14,850)</text>
+
+  <rect x="470" y="225" width="250" height="60" rx="10" fill="#1b2236"/>
+  <text x="490" y="255" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Receive: USDC</text>
+  <text x="490" y="275" fill="#ffffff" font-family="Inter, sans-serif" font-weight="600" font-size="14">14,835.20</text>
+
+  <rect x="470" y="315" width="250" height="44" rx="10" fill="#8b5cf6"/>
+  <text x="555" y="342" fill="#ffffff" font-family="Inter, sans-serif" font-weight="600" font-size="14">Execute Swap</text>
+
+  <!-- Lower Stats in Left Column -->
+  <rect x="50" y="310" width="360" height="150" rx="16" fill="#131826" stroke="#252f48" stroke-width="1"/>
+  <text x="75" y="345" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Smart Contract Health</text>
+  <text x="75" y="375" fill="#22c55e" font-family="Inter, sans-serif" font-weight="700" font-size="20">Audited â€¢ 100/100</text>
+  <rect x="75" y="400" width="310" height="8" rx="4" fill="#1e2840"/>
+  <rect x="75" y="400" width="310" height="8" rx="4" fill="#a855f7"/>
+</svg>
