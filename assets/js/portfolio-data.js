@@ -35,7 +35,8 @@ const PORTFOLIO_DATA = {
       { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/@MJC_Gaming12" },
       { name: "Facebook", icon: "facebook", url: "https://www.facebook.com/profile.php?id=61561445493585" },
       { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/methmaljaneesha/" },
-      { name: "TikTok", icon: "tiktok", url: "https://www.tiktok.com/@methmal.janeesha" }
+      { name: "TikTok", icon: "tiktok", url: "https://www.tiktok.com/@methmal.janeesha" },
+      { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/methmal-janeesha-185315336/" }
     ],
     stats: [
       { value: 3, suffix: "+", label: "Years of Creative Journey" },
